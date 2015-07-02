@@ -23712,6 +23712,10 @@
 	var UserProfiles = React.createClass({
 		displayName: 'UserProfiles',
 
+		propTypes: {
+			username: React.PropTypes.string.isRequired,
+			bio: React.PropTypes.object.isRequired
+		},
 		render: function render() {
 			return React.createElement(
 				'div',
@@ -23741,6 +23745,10 @@
 	var Notes = React.createClass({
 		displayName: 'Notes',
 
+		propTypes: {
+			username: React.PropTypes.string.isRequired,
+			notes: React.PropTypes.array.isRequired
+		},
 		render: function render() {
 			return React.createElement(
 				'div',
