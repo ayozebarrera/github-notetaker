@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ayozebarrera/github-notetaker#readme",
   "dependencies": {
+    "firebase": "^2.2.7",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
     "reactfire": "^0.4.0"
