@@ -1,0 +1,33 @@
+{
+  "name": "github-notetaker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayozebarrera/github-notetaker.git"
+  },
+  "keywords": [
+    "notetaker",
+    "github-notetaker"
+  ],
+  "author": "Ayoze Barrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayozebarrera/github-notetaker/issues"
+  },
+  "homepage": "https://github.com/ayozebarrera/github-notetaker#readme",
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-router": "^0.13.3"
+  },
+  "devDependencies": {
+    "babel-core": "^5.6.15",
+    "babel-loader": "^5.2.2",
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.10.0"
+  }
+}
