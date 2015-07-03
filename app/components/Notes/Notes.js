@@ -12,7 +12,7 @@ class Notes extends React.Component{
 			</div>
 		)
 	}
-}
+};
 
 Notes.propTypes = {
 	username: React.PropTypes.string.isRequired,
