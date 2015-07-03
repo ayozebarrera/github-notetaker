@@ -17,8 +17,7 @@ var Profile = React.createClass({
 			repos: []
 		}
 	},
-	componentDidMount: function(){
-		this.ref = new Firebase('https://github-note-taker.firebaseio.com');
+	init: function(){
 		var childRef = this.ref.child(this.getParams().username);
 		this.bindAsArray(childRef, 'notes');
 
@@ -30,8 +29,17 @@ var Profile = React.createClass({
 				});
 			}.bind(this));
 	},
+	componentDidMount: function(){
+		this.ref = new Firebase('https://github-note-taker.firebaseio.com');
+		this.init();
+	},
 	componenWillUnmount: function(){
 		this.unbind('notes');
+	},
+	componentWillReceiveProps: function(){
+		/*console.log('componentWillReceiveProps triggered!');*/
+		this.unbind('notes');
+		this.init();
 	},
 	handleAddNote: function(newNote){
 		this.ref.child(this.getParams().username).set(this.state.notes.concat([newNote]));

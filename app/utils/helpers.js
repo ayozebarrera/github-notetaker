@@ -8,11 +8,6 @@ function getUserInfo(username){
 	return axios.get('https://api.github.com/users/' + username);
 };
 
-/*var promiseObj = getRepos('tylermcginnis');
-promiseObj.then(function(data){
-	console.log(data);
-}):*/
-
 var helpers = {
 	getGithubInfo: function(username){
 		return axios.all([getRepos(username), getUserInfo(username)])

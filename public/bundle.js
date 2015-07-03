@@ -23647,8 +23647,7 @@
 				repos: []
 			};
 		},
-		componentDidMount: function componentDidMount() {
-			this.ref = new Firebase('https://github-note-taker.firebaseio.com');
+		init: function init() {
 			var childRef = this.ref.child(this.getParams().username);
 			this.bindAsArray(childRef, 'notes');
 
@@ -23659,8 +23658,17 @@
 				});
 			}).bind(this));
 		},
+		componentDidMount: function componentDidMount() {
+			this.ref = new Firebase('https://github-note-taker.firebaseio.com');
+			this.init();
+		},
 		componenWillUnmount: function componenWillUnmount() {
 			this.unbind('notes');
+		},
+		componentWillReceiveProps: function componentWillReceiveProps() {
+			/*console.log('componentWillReceiveProps triggered!');*/
+			this.unbind('notes');
+			this.init();
 		},
 		handleAddNote: function handleAddNote(newNote) {
 			this.ref.child(this.getParams().username).set(this.state.notes.concat([newNote]));
@@ -24459,11 +24467,6 @@
 	function getUserInfo(username) {
 		return axios.get('https://api.github.com/users/' + username);
 	};
-
-	/*var promiseObj = getRepos('tylermcginnis');
-	promiseObj.then(function(data){
-		console.log(data);
-	}):*/
 
 	var helpers = {
 		getGithubInfo: function getGithubInfo(username) {
