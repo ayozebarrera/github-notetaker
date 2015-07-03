@@ -16,7 +16,7 @@ var Repos = React.createClass({
 		});
 		return (
 			<div>
-				<h3> User Repos</h3>
+				<h3> Repositorios</h3>
 				<ul className="list-group">
 					{repos}
 				</ul>
